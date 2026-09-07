@@ -1,5 +1,5 @@
 // Nama cache untuk fail aplikasi anda
-const CACHE_NAME = 'pwa-pemantauan-v1';
+const CACHE_NAME = 'pwa-pemantauan-v2';
 
 // Senarai fail yang perlu disimpan di dalam cache
 const urlsToCache = [
