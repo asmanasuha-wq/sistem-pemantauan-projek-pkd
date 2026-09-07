@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aplikasi PWA Saya</title>
+  <title>Sistem Pemantauan Projek JKN Perlis</title>
   
   <!-- Tetapan PWA & Meta Tags -->
   <meta name="theme-color" content="#0b1120">
@@ -12,7 +12,7 @@
   <link rel="apple-touch-icon" href="icon-512.png">
   
   <style>
-    /* Buang margin dan pastikan iframe memenuhi ruang skrin tanpa sempadan */
+    /* Reset margin dan pastikan iframe memenuhi skrin sepenuhnya tanpa sempadan */
     body, html { 
       margin: 0; 
       padding: 0; 
@@ -30,20 +30,16 @@
 </head>
 <body>
 
-  <!-- Gantikan 'URL_LUARAN_ANDA_DI_SINI' dengan pautan sebenar anda -->
-  <iframe srchttps://script.google.com/macros/s/AKfycbx1zmMt6afqqWhEn7BXgQl6rzm5uquqmMCEkKrA502TyOBA-loh9R8KF-nUmkLOjeg12Q/exec" allowfullscreen></iframe>
+  <!-- Balutan URL Dashboard Anda -->
+  <iframe src="https://script.google.com/a/macros/moh.gov.my/s/AKfycbx1zmMt6afqqWhEn7BXgQl6rzm5uquqmMCEkKrA502TyOBA-loh9R8KF-nUmkLOjeg12Q/exec" allowfullscreen></iframe>
 
-  <!-- Skrip Pendaftaran Service Worker -->
+  <!-- Skrip Pendaftaran Service Worker (sw.js) -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('sw.js')
-          .then(registration => {
-            console.log('Service Worker berjaya didaftarkan dengan skop:', registration.scope);
-          })
-          .catch(error => {
-            console.error('Pendaftaran Service Worker gagal:', error);
-          });
+          .then(reg => console.log('Service Worker berjaya didaftarkan.', reg.scope))
+          .catch(err => console.error('Pendaftaran Service Worker gagal:', err));
       });
     }
   </script>
