@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplikasi PWA Saya</title>
+  
+  <!-- Tetapan PWA & Meta Tags -->
+  <meta name="theme-color" content="#0b1120">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon-512.png" type="image/png">
+  <link rel="apple-touch-icon" href="icon-512.png">
+  
+  <style>
+    /* Buang margin dan pastikan iframe memenuhi ruang skrin tanpa sempadan */
+    body, html { 
+      margin: 0; 
+      padding: 0; 
+      height: 100%; 
+      overflow: hidden; 
+      background-color: #0b1120; 
+    }
+    iframe { 
+      width: 100%; 
+      height: 100%; 
+      border: none; 
+      display: block; 
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Gantikan 'URL_LUARAN_ANDA_DI_SINI' dengan pautan sebenar anda -->
+  <iframe src="URL_LUARAN_ANDA_DI_SINI" allowfullscreen></iframe>
+
+  <!-- Skrip Pendaftaran Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then(registration => {
+            console.log('Service Worker berjaya didaftarkan dengan skop:', registration.scope);
+          })
+          .catch(error => {
+            console.error('Pendaftaran Service Worker gagal:', error);
+          });
+      });
+    }
+  </script>
+</body>
+</html>
